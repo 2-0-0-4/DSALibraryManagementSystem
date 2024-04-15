@@ -27,6 +27,11 @@ def delete_from_csv(): #deletes a book from csv
 def add_to_csv(): #adds a book and its data to csv
     pass
 
+def put_on_hold(): #holds a book for you if it's borrowed by someone else
+    pass
+
+def donate_a_book(): #allows you to check if a book exists in the database and lets you donate it if it doesn't
+    pass
 
 
 #---------IGNORE

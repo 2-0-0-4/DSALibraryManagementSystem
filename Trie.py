@@ -34,7 +34,23 @@ def change_availabilty(trie,node,avail):
         return 0
         
 def delete(trie,node):
-    pass
+    node = trie.root
+    nodes_stack = []
+    for char in key:
+        if char not in node.children:
+                # Key not found, no deletion required
+            return
+        nodes_stack.append(node)
+        node = node.children[char]
+
+        # Mark the end of key
+    node.is_end_of_word = False
+    while len(nodes_stack) > 0:
+        parent_node = nodes_stack.pop()
+        if len(node.children) > 1 or node.is_end_of_word:
+            return
+        del parent_node.children[node.key]
+        node = parent_node
     
 def search(trie,search_val,path_str,ret_lst):   #O(n) where n is the number of nodes
 

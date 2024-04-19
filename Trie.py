@@ -19,11 +19,12 @@ def add_node(trie, isbn,title,author,genre,avail_flag): #O(h) where h is length 
                 subtrie["Pointers"][index] = create_node(data,flag)
                 subtrie = subtrie["Pointers"][index] 
             else: #node is already present so iterate until title[char_i] is not present
+                subtrie = subtrie["Pointers"][index]
                 if flag == True:
                     subtrie["end_title"] = True
                     subtrie["data"] = data
-                else:
-                    subtrie = subtrie["Pointers"][index] 
+                # else:
+                    # subtrie = subtrie["Pointers"][index] 
     return trie
 
     
@@ -106,22 +107,22 @@ add_node(t,"978-0-307-47607-1","Wild","Cheryl Strayed","Travel Memoir",True)
 add_node(t,"978-1-4767-6603-8","Wild by Nature","Sarah Marquis","Adventure Memoir",True)
 
 # searching:
-lst = display(t,[])
-for element in lst:
-    print(element)
-print("------searching------")
-for i in range(5):
-    search_val = input("enter search: ")
-    print(search(t,search_val))
+# lst = display(t,[])
+# for element in lst:
+#     print(element)
+# print("------searching------")
+# for i in range(5):
+#     search_val = input("enter search: ")
+#     print(search(t,search_val))
 
 #deletion
-# print("------deletion------")
-# for i in range(5):
-#     delval = str(input("enter value to be deleted: "))
-#     delval = delval.replace(" ","")
-#     delval= delval.lower()
-#     delete(t,delval)
-#     print("after deletion:")
-#     lst = display(t,[])
-#     for element in lst:
-#         print(element)
+print("------deletion------")
+for i in range(5):
+    delval = str(input("enter value to be deleted: "))
+    delval = delval.replace(" ","")
+    delval= delval.lower()
+    delete(t,delval)
+    print("after deletion:")
+    lst = display(t,[])
+    for element in lst:
+        print(element)

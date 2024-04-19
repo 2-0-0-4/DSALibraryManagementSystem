@@ -8,7 +8,7 @@ def add_node(trie, title,isbn,author,genre,avail_flag = True): #O(n) where n is 
     subtrie = trie 
     for char_i in range(len(title)): #index of every character in title
         if title[char_i].isalpha():
-            index = ord(title[char_i]) - 97 #pointer index
+            index = ord(title[char_i].lower()) - 97 #pointer index
             data = [title[char_i]]
             p = subtrie["Pointers"][index] 
             flag = False #to indicate end of title
@@ -19,7 +19,11 @@ def add_node(trie, title,isbn,author,genre,avail_flag = True): #O(n) where n is 
                 subtrie["Pointers"][index] = create_node(data,flag)
                 subtrie = subtrie["Pointers"][index] 
             else: #node is already present so iterate until title[char_i] is not present
-                subtrie = subtrie["Pointers"][index] 
+                if flag == True:
+                    subtrie["end_title"] = True
+                    subtrie["data"] = data
+                else:
+                    subtrie = subtrie["Pointers"][index] 
     return trie
 
 def change_availabilty(trie,node,avail): 

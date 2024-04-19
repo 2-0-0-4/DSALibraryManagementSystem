@@ -4,7 +4,7 @@ def create_node(data,end):
 
 #formula for ord(character) -97. all characters are to be in lowercase
 
-def add_node(trie, title,isbn,author,genre,avail_flag = True): #O(n) where n is length of title
+def add_node(trie, isbn,title,author,genre,avail_flag): #O(h) where h is length of title
     subtrie = trie 
     for char_i in range(len(title)): #index of every character in title
         if title[char_i].isalpha():
@@ -26,63 +26,63 @@ def add_node(trie, title,isbn,author,genre,avail_flag = True): #O(n) where n is 
                     subtrie = subtrie["Pointers"][index] 
     return trie
 
-def change_availabilty(trie,node,avail): 
-    subtrie = trie
-    for char in node: #traces out path of node in trie
-        subtrie = subtrie["Pointers"][ord(char)-97]    
-        if subtrie == None:
-            return -1  #node is not in trie
-
-    if subtrie["data"][1] == node and subtrie["end_title"] == True: #changes flag to avail
-        subtrie["data"][-1] = avail 
-        return 0
-        
-def delete(trie,node):
-    node = trie.root
-    nodes_stack = []
-    for char in key:
-        if char not in node.children:
-                # Key not found, no deletion required
-            return
-        nodes_stack.append(node)
-        node = node.children[char]
-
-        # Mark the end of key
-    node.is_end_of_word = False
-    while len(nodes_stack) > 0:
-        parent_node = nodes_stack.pop()
-        if len(node.children) > 1 or node.is_end_of_word:
-            return
-        del parent_node.children[node.key]
-        node = parent_node
     
-def search(trie,search_val,path_str,ret_lst):   #O(n) where n is the number of nodes
 
-    if trie["end_title"] == True and trie["Pointers"] == [None]*26: #end of word 
-        if search_val in path_str:
-                ret_lst.append(trie["data"])
+def delete(trie, del_val, length=0):
+    if trie == None: #trie is empty or word does not exist
+        return None
+
+    if length == len(del_val): #reached the end of the del_val
+        if trie["end_title"] == True: #end of word is reached
+            trie["end_title"] = False 
+            trie["data"] = trie["data"][0]
+        if not any(trie["Pointers"]): #independent node, does not have any children
+            return None
+        return trie
+    
+    #calculating next index and calling the delete function on the next node
+    index = ord(del_val[length]) - ord("a")
+    trie["Pointers"][index] = delete(trie["Pointers"][index], del_val, length + 1)
+
+    #if the node has no other children and is not the last node 
+    if not any(trie["Pointers"]) and not trie["end_title"]: 
+        return None
+    return trie
+
+
+def search(trie,search_val):   #O(n + m) where n is the number of nodes and m is the number of books
+
+    # if trie["end_title"] == True and trie["Pointers"] == [None]*26: #end of word 
+    #     if search_val in path_str:
+    #             ret_lst.append(trie["data"])
                 
-    else:
-        if trie["end_title"] == True:
-            if path_str == search_val or search_val in path_str:
-                ret_lst.append(trie["data"])
+    # else:
+    #     if trie["end_title"] == True:
+    #         if search_val in path_str:
+    #             ret_lst.append(trie["data"])
                
-        for i in range(26): #iterates over all pointers
-            subtrie = trie["Pointers"][i] 
-            if subtrie != None: #recursive call when subtrie exists (there is a path to be explored)
-                path_str = path_str + subtrie["data"][0]
-                search(subtrie,search_val,path_str,ret_lst)  
-                path_str = ""
-        return ret_lst
+    #     for i in range(26): #iterates over all pointers
+    #         subtrie = trie["Pointers"][i] 
+    #         if subtrie != None: #recursive call when subtrie exists (there is a path to be explored)
+    #             path_str = path_str + subtrie["data"][0]
+    #             search(subtrie,search_val,path_str,ret_lst)  
+    #             path_str = ""
+    lst = display(trie,[])
+    ret_lst = []
+    for element in lst:
+        if search_val.lower() == element[0].lower() or search_val.lower() in element[0].lower():
+            ret_lst.append(element)
+    return ret_lst
+
 
         
 def display(trie,ret_lst): #O(n) where n is the number of nodes in the trie
+
     if trie["end_title"] == True and trie["Pointers"]==[None]*26: #end of word 
         # print(trie["data"][1:])
         ret_lst.append(trie["data"][1:])
     else:
         if trie["end_title"] == True:
-            # print(trie["data"][1:])
             ret_lst.append(trie["data"][1:])
         for i in range(26): #iterates over all pointers
             subtrie = trie["Pointers"][i] 
@@ -90,31 +90,38 @@ def display(trie,ret_lst): #O(n) where n is the number of nodes in the trie
                 display(subtrie,ret_lst)
     return ret_lst
 
-
+# def add_node(trie, isbn,title,author,genre,avail_flag = True)
 t = create_node("",False)
-add_node(t,"harry potter",4673460,"afeera","fiction")
-add_node(t,"harry potter and the sorceres stone",4673460,"afeera","fiction")
-add_node(t,"wonder",4673890,"umair","first one")
-add_node(t,"wonders",4673890,"umair","second")
-add_node(t,"alice",123456,"umair","mystery")
-add_node(t,"kindness",123456,"umair","kind")
-print(display(t,[]))
-change_availabilty(t,"alice",False)
-print(display(t,[]))
-# add_node(t,"wonders",4673890,"umair","fiction")
-# print(search(t,'harry potter',""))
-# print(search(t,'alice'))
-# print("------------------")
-# print(search(t,"alice","",[]))
-# print("------------------")
-# print(search(t,'harry',"",[]))
-# print("------------")
-# print(search(t,'wonders',"",[]))
-# print("------------")
-# print(search(t,'wonder',"",[]))
-# print("------------")
-# print(search(t,'kind',"",[]))
-# print(search(t,'and',"",[]))
+add_node(t,"978-0-7653-7990-8","The Lost World","Michael Crichton","Science Fiction",True)
+add_node(t,"978-0-553-38276-3","The Catcher in the Rye","J.D. Salinger","Classic Literature",True)
+add_node(t,"978-0-0000-0000-1","Burmese Days","George Orwell","Fiction",True)
+add_node(t,"978-1-5247-9757-9","The Lord of the Rings","J.R.R. Tolkien","Fantasy",True)
+add_node(t,"978-0-0000-0004-8","The Adventures of Huckleberry Finn","Mark Twain","Adventure",True)
+add_node(t,"978-0-0000-0004-4","The Adventures of Tom Sawyer","Mark Twain","Adventure",True)
+add_node(t,"978-0-0000-0004-8","The Road","Mark Twain","Adventure",True)
+add_node(t,"978-0-0000-0007-7","Hamlet","William Shakespeare","Tragedy",True)
+add_node(t,"978-0-0000-0007-7","Moby Dick","William Shakespeare","Tragedy",True)
+add_node(t,"978-0-0000-0007-7","Moby","William Shakespeare","Tragedy",True)
+add_node(t,"978-0-307-47607-1","Wild","Cheryl Strayed","Travel Memoir",True)
+add_node(t,"978-1-4767-6603-8","Wild by Nature","Sarah Marquis","Adventure Memoir",True)
 
+# searching:
+lst = display(t,[])
+for element in lst:
+    print(element)
+print("------searching------")
+for i in range(5):
+    search_val = input("enter search: ")
+    print(search(t,search_val))
 
-# add_node(t,"qwertyuiopasdfghjklzxcvbnm,")
+#deletion
+# print("------deletion------")
+# for i in range(5):
+#     delval = str(input("enter value to be deleted: "))
+#     delval = delval.replace(" ","")
+#     delval= delval.lower()
+#     delete(t,delval)
+#     print("after deletion:")
+#     lst = display(t,[])
+#     for element in lst:
+#         print(element)

@@ -1,10 +1,10 @@
-from TrieADT import *
+from TrieADTver2 import *
 import csv
 
 def initialize_trie():
     #reads data from csv and makes trie (calls the addnode() function in TrieADT)
     #returns trie
-    trie = create_node("",False)
+    trie = create_node("","",False)
     file = open("BookData.csv")
     bookdata = csv.DictReader(file)
     for book in bookdata:
@@ -29,16 +29,17 @@ def initialize_trie():
 # print(len(lst))
 
 def change_availabilty(trie,node,avail): 
+    keywords = node.split()
+    for keyword in keywords:
+        subtrie = trie
+        for char in keyword: #traces out path of node in trie
+            subtrie = subtrie["Pointers"][ord(char)-97]    
+            if subtrie == None:
+                return -1  #node is not in trie
 
-    subtrie = trie
-    for char in node: #traces out path of node in trie
-        subtrie = subtrie["Pointers"][ord(char)-97]    
-        if subtrie == None:
-            return -1  #node is not in trie
-
-    if subtrie["data"][1] == node and subtrie["end_title"] == True: #changes flag to avail
-        subtrie["data"][-1] = avail 
-        return 0
+        if node in subtrie["data"] and subtrie["end_word"] == True: #changes flag to avail
+            subtrie["data"][node.lower()][-1] = avail 
+    return 0
 
 
 def pswd_check(user,pswd):
@@ -54,17 +55,16 @@ def pswd_check(user,pswd):
 
 def borrow_return(bookname,username,option): #"b" = borrow ,"r" means return
     #return True when borrowed/returned
-    # changes the flag of the book(in csv and trie) and 
+    # changes the flag of the book(in csv) and flag = True when returned and False when borrowed(not available)
     #adds bookname in UserData csv file (under the book field for the relevant user)
-    #to change flag in trie (use change_avalibaity func in Trie.py)
     pass
 
-def delete_from_csv(): 
-    #deletes a book from csv
+def delete_from_csv(bookname): 
+    #deletes a book from csv (deletes that specific line in BookData.csv)
     pass
 
-def add_to_csv(): 
-    #adds a book and its data to csv
+def add_to_csv(isbn,bookname,author,genre): 
+    #adds a book and its data to csv (set Available flag to True)
     pass
 
 

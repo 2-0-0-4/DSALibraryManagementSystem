@@ -1,51 +1,51 @@
-ISBN,BookName,Author,Genre,Available
-978-0-7653-7990-8,The Lost World,Michael Crichton,Science Fiction,False
-978-0-553-38276-3,The Catcher in the Rye,J.D. Salinger,Classic Literature,True
-978-0-0000-0000-1,Burmese Days,George Orwell,Fiction,True
-978-0-0000-0000-2,Brave New World,Aldous Huxley,Science Fiction,True
-978-0-0000-0000-3,Animal Farm,George Orwell,Satire,False
-978-0-0000-0000-4,The Alchemist,Paulo Coelho,Philosophical Fiction,True
-978-0-0000-0000-5,The Da Vinci Code,Dan Brown,Mystery,True
-978-1-5247-9757-9,The Lord of the Rings,J.R.R. Tolkien,Fantasy,True
-978-0-7432-1143-2,The Shining,Stephen King,Horror,True
-978-0-452-28563-0,Pride and Prejudice,Jane Austen,Romance,True
-978-0-312-86359-3,The Girl with the Dragon Tattoo,Stieg Larsson,Thriller,True
-978-0-553-21311-6,The Hunger Games,Suzanne Collins,Dystopian Fiction,True
-978-0-385-08605-7,The Road,Cormac McCarthy,Post-Apocalyptic Fiction,True
-978-0-312-57668-1,The Handmaid's Tale,Margaret Atwood,Dystopian Fiction,True
-978-0-7432-8956-6,The Hitchhiker's Guide to the Galaxy,Douglas Adams,Science Fiction,True
-978-0-553-21311-6,The Fault in Our Stars,John Green,Young Adult,True
-978-0-7535-1308-9,The Chronicles of Narnia,C.S. Lewis,Fantasy,True
-978-1-5247-4758-5,A Song of Ice and Fire,George R.R. Martin,Fantasy,True
-978-0-385-48643-1,The Road Less Traveled,M. Scott Peck,Psychology,True
-978-1-101-14645-9,The Picture of Dorian Gray,Oscar Wilde,Classic Literature,True
-978-0-553-29335-4,Frankenstein,Mary Shelley,Horror,True
-978-0-345-32433-1,The Count of Monte Cristo,Alexandre Dumas,Adventure,True
-978-0-0000-0000-8,The Adventures of Huckleberry Finn,Mark Twain,Adventure,True
-978-0-0000-0000-9,The Bell Jar,Sylvia Plath,Autobiographical Fiction,True
-978-0-0000-0000-0,A Wrinkle in Time,Madeleine L'Engle,Science Fiction,True
-978-0-0000-0001-1,The Old Man and the Sea,Ernest Hemingway,Classic Literature,True
-978-0-0000-0002-2,The War of the Worlds,H.G. Wells,Science Fiction,True
-978-0-0000-0003-3,The Grapes of Wrath,John Steinbeck,Historical Fiction,True
-978-0-0000-0004-4,The Adventures of Tom Sawyer,Mark Twain,Adventure,True
-978-0-0000-0005-5,Dracula,Bram Stoker,Gothic Fiction,True
-978-0-0000-0006-6,The Canterbury Tales,Geoffrey Chaucer,Medieval Literature,True
-978-0-0000-0007-7,Hamlet,William Shakespeare,Tragedy,True
-978-0-0000-0008-8,The Republic,Plato,Philosophy,True
-978-0-0000-0009-9,The Odyssey,Homer,Mythology,True
-978-0-0000-0010-0,Moby Dick,Herman Melville,Adventure,True
-978-0-0000-0011-1,Moby,Herman Melville,Adventure,True
-978-0-0000-0012-2,Mockingbird,Harper Lee,Coming-of-Age,True
-978-0-0000-0013-3,Mocking,Harper Lee,Coming-of-Age,True
-978-1-4165-9818-4,Harry Potter and the Sorcerer's Stone,J.K. Rowling,Fantasy,True
-978-1-5704-1945-8,Harry Potter and the Chamber of Secrets,J.K. Rowling,Fantasy,True
-978-0-7475-4624-1,Harry Potter and the Prisoner of Azkaban,J.K. Rowling,Fantasy,True
-978-0-7475-5100-9,Harry Potter and the Goblet of Fire,J.K. Rowling,Fantasy,True
-978-0-7475-5819-0,Harry Potter and the Order of the Phoenix,J.K. Rowling,Fantasy,True
-978-0-7475-8108-1,Harry Potter and the Half-Blood Prince,J.K. Rowling,Fantasy,True
-978-0-545-01022-1,Harry Potter and the Deathly Hallows,J.K. Rowling,Fantasy,True
-978-0-307-47607-1,Wild,Cheryl Strayed,Travel Memoir,True
-978-1-4767-6603-8,Wild by Nature,Sarah Marquis,Adventure Memoir,True
-978-1-84149-104-8,Chronicles of an Age of Darkness,Hugh Cook,Fantasy,True
-978-0-006-081635,Chronicles of Ancient Darkness,Michelle Paver,Fantasy,True
-978-0-8024-2865-8,Chronicles of Brothers,Wendy Alec,Fantasy,True
+ISBN,BookName,Author,Genre,Available,DueDate
+978-0-7653-7990-8,The Lost World,Michael Crichton,Science Fiction,False,
+978-0-553-38276-3,The Catcher in the Rye,J.D. Salinger,Classic Literature,True,
+978-0-0000-0000-1,Burmese Days,George Orwell,Fiction,True,
+978-0-0000-0000-2,Brave New World,Aldous Huxley,Science Fiction,True,
+978-0-0000-0000-3,Animal Farm,George Orwell,Satire,False,
+978-0-0000-0000-4,The Alchemist,Paulo Coelho,Philosophical Fiction,True,
+978-0-0000-0000-5,The Da Vinci Code,Dan Brown,Mystery,True,
+978-1-5247-9757-9,The Lord of the Rings,J.R.R. Tolkien,Fantasy,True,
+978-0-7432-1143-2,The Shining,Stephen King,Horror,True,
+978-0-452-28563-0,Pride and Prejudice,Jane Austen,Romance,True,
+978-0-312-86359-3,The Girl with the Dragon Tattoo,Stieg Larsson,Thriller,True,
+978-0-553-21311-6,The Hunger Games,Suzanne Collins,Dystopian Fiction,True,
+978-0-385-08605-7,The Road,Cormac McCarthy,Post-Apocalyptic Fiction,True,
+978-0-312-57668-1,The Handmaid's Tale,Margaret Atwood,Dystopian Fiction,True,
+978-0-7432-8956-6,The Hitchhiker's Guide to the Galaxy,Douglas Adams,Science Fiction,True,
+978-0-553-21311-6,The Fault in Our Stars,John Green,Young Adult,True,
+978-0-7535-1308-9,The Chronicles of Narnia,C.S. Lewis,Fantasy,True,
+978-1-5247-4758-5,A Song of Ice and Fire,George R.R. Martin,Fantasy,True,
+978-0-385-48643-1,The Road Less Traveled,M. Scott Peck,Psychology,True,
+978-1-101-14645-9,The Picture of Dorian Gray,Oscar Wilde,Classic Literature,True,
+978-0-553-29335-4,Frankenstein,Mary Shelley,Horror,True,
+978-0-345-32433-1,The Count of Monte Cristo,Alexandre Dumas,Adventure,True,
+978-0-0000-0000-8,The Adventures of Huckleberry Finn,Mark Twain,Adventure,True,
+978-0-0000-0000-9,The Bell Jar,Sylvia Plath,Autobiographical Fiction,True,
+978-0-0000-0000-0,A Wrinkle in Time,Madeleine L'Engle,Science Fiction,True,
+978-0-0000-0001-1,The Old Man and the Sea,Ernest Hemingway,Classic Literature,True,
+978-0-0000-0002-2,The War of the Worlds,H.G. Wells,Science Fiction,True,
+978-0-0000-0003-3,The Grapes of Wrath,John Steinbeck,Historical Fiction,True,
+978-0-0000-0004-4,The Adventures of Tom Sawyer,Mark Twain,Adventure,True,
+978-0-0000-0005-5,Dracula,Bram Stoker,Gothic Fiction,True,
+978-0-0000-0006-6,The Canterbury Tales,Geoffrey Chaucer,Medieval Literature,True,
+978-0-0000-0007-7,Hamlet,William Shakespeare,Tragedy,True,
+978-0-0000-0008-8,The Republic,Plato,Philosophy,True,
+978-0-0000-0009-9,The Odyssey,Homer,Mythology,True,
+978-0-0000-0010-0,Moby Dick,Herman Melville,Adventure,True,
+978-0-0000-0011-1,Moby,Herman Melville,Adventure,True,
+978-0-0000-0012-2,Mockingbird,Harper Lee,Coming-of-Age,True,
+978-0-0000-0013-3,Mocking,Harper Lee,Coming-of-Age,True,
+978-1-4165-9818-4,Harry Potter and the Sorcerer's Stone,J.K. Rowling,Fantasy,True,
+978-1-5704-1945-8,Harry Potter and the Chamber of Secrets,J.K. Rowling,Fantasy,True,
+978-0-7475-4624-1,Harry Potter and the Prisoner of Azkaban,J.K. Rowling,Fantasy,True,
+978-0-7475-5100-9,Harry Potter and the Goblet of Fire,J.K. Rowling,Fantasy,True,
+978-0-7475-5819-0,Harry Potter and the Order of the Phoenix,J.K. Rowling,Fantasy,True,
+978-0-7475-8108-1,Harry Potter and the Half-Blood Prince,J.K. Rowling,Fantasy,True,
+978-0-545-01022-1,Harry Potter and the Deathly Hallows,J.K. Rowling,Fantasy,True,
+978-0-307-47607-1,Wild,Cheryl Strayed,Travel Memoir,True,
+978-1-4767-6603-8,Wild by Nature,Sarah Marquis,Adventure Memoir,True,
+978-1-84149-104-8,Chronicles of an Age of Darkness,Hugh Cook,Fantasy,True,
+978-0-006-081635,Chronicles of Ancient Darkness,Michelle Paver,Fantasy,True,
+978-0-8024-2865-8,Chronicles of Brothers,Wendy Alec,Fantasy,True,
